@@ -16,20 +16,23 @@
             $file_to_write = "index.html";
             $content_to_write = "<!DOCTYPE html>
                                 <html>
-                                <head>
-                                <meta>
-                                <title></title>
-                                <script type=\"text/javascript\" src=\"../jquery.js\"></script>
-                                </head>
-                                <body>
-                                <p>you are gay!</p>
-                                <script>
-                                $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
-                                    console.log(JSON.stringify(data, null, 2));
-                                    ip = JSON.parse(JSON.stringify(data, null, 2));
-                                    console.log(ip[\"geobytesipaddress\"]);
-                                });
-                                </script></body></html>";
+                                    <head>
+                                        <meta>
+                                        <title></title>
+                                        <script type=\"text/javascript\" src=\"../jquery.js\"></script>
+                                    </head>
+                                    <body>
+                                        <p>Подождите пока вас автоматически переадресуют на страницу продукта</p>
+                                        <script> 
+                                            //get ip
+                                            $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
+                                                console.log(JSON.stringify(data, null, 2));
+                                                ip = JSON.parse(JSON.stringify(data, null, 2));
+                                                console.log(ip[\"geobytesipaddress\"]);
+                                            });
+                                        </script>
+                                    </body>
+                                </html>";
 
             $file = fopen($dir . '/' . $file_to_write,"w");
 
